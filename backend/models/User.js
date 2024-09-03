@@ -10,10 +10,6 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    phoneNumber: {
-        type: String,
-        unique: true,
-    },
     password: {
         type: String,
         required: true,
@@ -21,7 +17,7 @@ const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         enum: ['student', 'guide', 'hod'],
-        required: true,
+        default: 'student',
     },
     date: {
         type: Date,
